@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/selector_view">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/ivNavigation"
+            style="@style/ivCommon"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_circle"
+            tools:ignore="ContentDescription" />
+
+
+        <TextView
+            android:id="@+id/tvNavigationName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/tv_count_name"
+            android:layout_toEndOf="@+id/ivNavigation"
+            android:layout_toRightOf="@+id/ivNavigation"
+            android:padding="5dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            tools:text="April 5, 2020" />
+
+        <TextView
+            android:id="@+id/tv_count_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/right_arrow_iv"
+            android:padding="5dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            tools:text="5" />
+
+        <ImageView
+            android:id="@+id/right_arrow_iv"
+            style="@style/ivCommon"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_right_arrow"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/image_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="3"
+        tools:itemCount="5"
+        android:orientation="vertical"
+        tools:listitem="@layout/pic_holder_item" />
+</LinearLayout>
